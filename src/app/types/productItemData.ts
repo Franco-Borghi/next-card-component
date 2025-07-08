@@ -1,0 +1,22 @@
+export type ProductItemData = {
+	Id_items_showcase: number;
+	Id_showcase: number;
+	Name_items_showcase: string;
+	slug: string;
+	Status_items_showcase: 'available' | 'sold' | 'donado' | 'rented';
+	Price_items_showcase: number;
+	Original_price_items_showcase?: number;
+	Discount_items_showcase?: number;
+	Min_price_offeritems_showcase?: number;
+	Delivery_items_showcase?: string;
+	Height_items_showcase?: number;
+	Width_items_showcase?: number;
+	Length_items_showcase?: number;
+	Id_origin?: string;
+	user_type_id?: string;
+	fullname?: string;
+	Images_items_showcase?: string;
+	Image_crop_items_showcase?: string;
+	Additional_Images_crop_items_showcase?: string;
+	fav?: boolean;
+};

@@ -19,7 +19,9 @@
 			}
 		],
 		"paths": {
-			"@shared/*": ["./src/shared/*"]
+			"@types": ["./src/app/types/index.ts"],
+			"@constants": ["./src/app/constants/index.ts"],
+			"@components": ["./src/app/components/index.ts"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,5 +1,12 @@
-import styles from './page.module.scss';
+import { mockProducts } from '@constants';
+import { ProductItem } from '@components';
 
 export default function Home() {
-	return <main className={styles.main}></main>;
+	return (
+		<main>
+			{mockProducts.map((prod, i) => (
+				<ProductItem key={i} item={prod} />
+			))}
+		</main>
+	);
 }
