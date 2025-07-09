@@ -1,24 +1,31 @@
+'use client';
 import { ProductItem } from './components';
-import styles from './styles.module.scss';
 import { ProductItemData } from './types';
+import styles from './styles.module.scss';
+import { useEffect, useState } from 'react';
 
-async function fetchProducts(): Promise<ProductItemData[]> {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
-		cache: 'no-store',
-	});
+export default function Products() {
+	const [products, setProducts] = useState<ProductItemData[]>([]);
 
-	if (!res.ok) {
-		throw new Error(`Error HTTP: ${res.status}`);
+	async function fetchProducts() {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
+			cache: 'no-store',
+		});
+
+		if (!res.ok) {
+			throw new Error(`Error HTTP: ${res.status}`);
+		}
+
+		const data = await res.json();
+
+		if (Array.isArray(data)) {
+			setProducts(data);
+		}
 	}
 
-	const data = await res.json();
-	console.log(data);
-
-	return data;
-}
-export default async function Products() {
-	let products = [];
-	products = await fetchProducts();
+	useEffect(() => {
+		fetchProducts();
+	}, []);
 
 	return (
 		<section className={styles.cardsWrapper}>
