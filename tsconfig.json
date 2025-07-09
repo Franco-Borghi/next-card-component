@@ -19,9 +19,12 @@
 			}
 		],
 		"paths": {
-			"@types": ["./src/app/types/index.ts"],
-			"@constants": ["./src/app/constants/index.ts"],
-			"@components": ["./src/app/components/index.ts"]
+			"@products": ["./src/app/productos/index.ts"],
+			"@products/*": ["./src/app/productos/*"],
+			"@shared": ["./src/app/shared/index.ts"],
+			"@shared/*": ["./src/app/shared/*"],
+			"@public": ["./public/index.ts"],
+			"@public/*": ["./public/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

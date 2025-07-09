@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { ProductItemData } from '@types';
+import { ProductItemData } from '../../types';
 import styles from '../../styles.module.scss';
 
 type Props = {
@@ -21,7 +21,7 @@ export const LikeButton: React.FC<Props> = ({ item, size = 30 }) => {
 				setFav(!fav);
 			}}
 		>
-			{fav ? '💖' : '🤍'}
+			{fav ? '♥️' : '🤍'}
 		</button>
 	);
 };

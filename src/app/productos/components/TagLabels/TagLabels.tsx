@@ -1,7 +1,7 @@
-import { ProductItemData } from '@types';
-import { LikeButton } from '@components';
-import styles from '../../styles.module.scss';
+import { ProductItemData } from '../../types';
+import { LikeButton } from '..';
 import clsx from 'clsx';
+import styles from '../../styles.module.scss';
 
 type Props = {
 	item: ProductItemData;

@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import { FC, useMemo, useState } from 'react';
-import { ProductCarousel, ProductInfo, TagLabels } from '@components';
-import { ProductItemData } from '@types';
+import { ProductCarousel, ProductInfo, TagLabels } from '..';
+import { ProductItemData } from '../../types';
 import styles from '../../styles.module.scss';
 
 type Props = {

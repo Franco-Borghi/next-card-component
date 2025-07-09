@@ -1,7 +1,9 @@
-$alaska-black: #2b2b2b;
-$alaska-main-color: #c67f63;
-$alaska-secondary-color: #99b087;
-$alaska-white: #f2f2f2;
+.cardsWrapper {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(248px, 288px));
+	justify-content: center;
+}
 
 .product-carousel {
 	position: relative;
@@ -131,7 +133,7 @@ a.product-info-wrapper {
 	width: auto;
 	max-width: 18rem;
 	height: 100%;
-	color: $alaska-black;
+	color: var(--alaska-black);
 
 	&:hover {
 		text-decoration: none !important;
@@ -170,28 +172,29 @@ a.product-info-wrapper {
 		.delivery {
 			flex-direction: row;
 			padding-left: 27px;
-			background-color: $alaska-secondary-color;
+			background-color: var(--alaska-secondary-color);
 			background-image: url('/transporte.svg');
-			background-position: 7px 3px;
+			background-repeat: no-repeat;
+			background-position: 7px center;
 			background-size: 14px auto;
-			color: $alaska-white;
+			color: var(--alaska-white);
 			line-height: 0.4rem;
 			font-size: 10px;
 			vertical-align: baseline;
-			border: 1px solid $alaska-secondary-color;
+			border: 1px solid var(--alaska-secondary-color);
 		}
 
 		.new {
-			color: $alaska-main-color;
+			color: var(--alaska-main-color);
 			background-color: white;
-			border: 1px solid $alaska-main-color;
+			border: 1px solid var(--alaska-main-color);
 		}
 
 		.tag {
 			font-weight: bold;
 			top: 1.5rem;
 			right: 1rem;
-			border: 1px solid $alaska-black;
+			border: 1px solid var(--alaska-black);
 		}
 
 		.delivery,
@@ -208,7 +211,10 @@ a.product-info-wrapper {
 		}
 
 		.like-btn {
+			cursor: pointer;
 			width: auto;
+			border: none;
+			background: none;
 			margin-left: auto;
 		}
 	}
@@ -222,7 +228,7 @@ a.product-info-wrapper {
 		z-index: 2000;
 		right: 10px;
 		border-radius: 50%;
-		background: $alaska-main-color;
+		background: var(--alaska-main-color);
 		color: white;
 		font-weight: 600;
 		padding: 4px 2px;
@@ -246,12 +252,12 @@ a.product-info-wrapper {
 		}
 
 		.tag-sold {
-			background-color: $alaska-secondary-color;
+			background-color: var(--alaska-secondary-color);
 			color: #f0f0f0;
 		}
 
 		.tag-donated {
-			background-color: $alaska-main-color;
+			background-color: var(--alaska-main-color);
 			color: #f0f0f0;
 		}
 	}
@@ -260,7 +266,7 @@ a.product-info-wrapper {
 .product-img-wrapper {
 	position: relative;
 	max-height: 100%;
-	background-color: $alaska-white;
+	background-color: var(--alaska-white);
 	width: 100%;
 	justify-self: center;
 	align-self: center;
@@ -294,8 +300,8 @@ a.product-info-wrapper {
 
 	.nuevo-badge {
 		background-color: #fff;
-		color: $alaska-main-color;
-		border: 1px solid $alaska-main-color;
+		color: var(--alaska-main-color);
+		border: 1px solid var(--alaska-main-color);
 		border-radius: 20px;
 		padding: 2px 10px;
 		justify-content: center;

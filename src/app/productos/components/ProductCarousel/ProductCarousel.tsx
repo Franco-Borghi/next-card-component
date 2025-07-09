@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import clsx from 'clsx';
 import styles from '../../styles.module.scss';
 
 type Props = {
@@ -20,7 +21,7 @@ export const ProductCarousel: React.FC<Props> = ({ images, currentIndex, setCurr
 				{images.map((img, index) => (
 					<div
 						key={index}
-						className={`${styles['carousel-slide']} ${index === currentIndex ? styles['active'] : ''}`}
+						className={clsx(styles['carousel-slide'], { [styles.active]: index === currentIndex })}
 						style={{
 							transform: `translateX(${100 * (index - currentIndex)}%)`,
 						}}
@@ -34,34 +35,34 @@ export const ProductCarousel: React.FC<Props> = ({ images, currentIndex, setCurr
 			{showArrows && (
 				<>
 					<button
-						className={styles['carousel-button prev small']}
+						className={clsx(styles['carousel-button'], styles.prev, styles.small)}
 						onClick={(e) => {
 							e.preventDefault();
 							setCurrentIndex(Math.max(0, currentIndex - 1));
 						}}
 						disabled={currentIndex === 0}
 					>
-						<span className={styles['arrow']}>&#10094;</span>
+						<span className={styles.arrow}>&#10094;</span>
 					</button>
 					<button
-						className={styles['carousel-button next small']}
+						className={clsx(styles['carousel-button'], styles.next, styles.small)}
 						onClick={(e) => {
 							e.preventDefault();
 							setCurrentIndex(Math.min(images.length - 1, currentIndex + 1));
 						}}
 						disabled={currentIndex === images.length - 1}
 					>
-						<span className={styles['arrow']}>&#10095;</span>
+						<span className={styles.arrow}>&#10095;</span>
 					</button>
 				</>
 			)}
 
 			{showArrows && (
-				<div className={styles['carousel-indicators small']}>
+				<div className={clsx(styles['carousel-indicators'], styles.small)}>
 					{images.map((_, index) => (
 						<button
 							key={index}
-							className={`${styles['indicator']} ${index === currentIndex ? styles['active'] : ''}`}
+							className={clsx(styles['indicator'], { [styles.active]: index === currentIndex })}
 							onClick={(e) => {
 								e.preventDefault();
 								setCurrentIndex(index);
